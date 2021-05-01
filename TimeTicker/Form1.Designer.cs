@@ -34,25 +34,34 @@ namespace TimeTicker
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.opacityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.tickerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PanelHome = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelOpacity = new System.Windows.Forms.Panel();
             this.OkBtn = new System.Windows.Forms.Button();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.TimerOkBtn = new System.Windows.Forms.Button();
+            this.PanelTimer = new System.Windows.Forms.Panel();
             this.DTBEnd = new System.Windows.Forms.DateTimePicker();
+            this.BtnSaveTime = new System.Windows.Forms.Button();
+            this.BtnTimerOk = new System.Windows.Forms.Button();
             this.DTBStart = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.PanelTicker = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.NumTick = new System.Windows.Forms.NumericUpDown();
+            this.BtnOkTicker = new System.Windows.Forms.Button();
+            this.LabelTicker = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.PanelHome.SuspendLayout();
+            this.PanelOpacity.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.panel3.SuspendLayout();
+            this.PanelTimer.SuspendLayout();
+            this.PanelTicker.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumTick)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -62,9 +71,10 @@ namespace TimeTicker
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closeToolStripMenuItem,
             this.opacityToolStripMenuItem,
-            this.timerToolStripMenuItem});
+            this.timerToolStripMenuItem,
+            this.tickerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 76);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 100);
             // 
             // closeToolStripMenuItem
             // 
@@ -87,17 +97,24 @@ namespace TimeTicker
             this.timerToolStripMenuItem.Text = "Timer";
             this.timerToolStripMenuItem.Click += new System.EventHandler(this.timerToolStripMenuItem_Click);
             // 
-            // panel1
+            // tickerToolStripMenuItem
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.circularProgressBar1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(192, 244);
-            this.panel1.TabIndex = 3;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
-            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
+            this.tickerToolStripMenuItem.Name = "tickerToolStripMenuItem";
+            this.tickerToolStripMenuItem.Size = new System.Drawing.Size(129, 24);
+            this.tickerToolStripMenuItem.Text = "Ticker";
+            this.tickerToolStripMenuItem.Click += new System.EventHandler(this.tickerToolStripMenuItem_Click);
+            // 
+            // PanelHome
+            // 
+            this.PanelHome.Controls.Add(this.label1);
+            this.PanelHome.Controls.Add(this.circularProgressBar1);
+            this.PanelHome.Location = new System.Drawing.Point(0, 0);
+            this.PanelHome.Name = "PanelHome";
+            this.PanelHome.Size = new System.Drawing.Size(192, 244);
+            this.PanelHome.TabIndex = 3;
+            this.PanelHome.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.PanelHome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.PanelHome.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             // 
             // label1
             // 
@@ -143,16 +160,17 @@ namespace TimeTicker
             this.circularProgressBar1.TabIndex = 2;
             this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(0);
             this.circularProgressBar1.Value = 68;
+            this.circularProgressBar1.Click += new System.EventHandler(this.circularProgressBar1_Click);
             // 
-            // panel2
+            // PanelOpacity
             // 
-            this.panel2.Controls.Add(this.OkBtn);
-            this.panel2.Controls.Add(this.trackBar1);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(192, 244);
-            this.panel2.TabIndex = 4;
+            this.PanelOpacity.Controls.Add(this.OkBtn);
+            this.PanelOpacity.Controls.Add(this.trackBar1);
+            this.PanelOpacity.Controls.Add(this.label2);
+            this.PanelOpacity.Location = new System.Drawing.Point(0, 0);
+            this.PanelOpacity.Name = "PanelOpacity";
+            this.PanelOpacity.Size = new System.Drawing.Size(192, 244);
+            this.PanelOpacity.TabIndex = 4;
             // 
             // OkBtn
             // 
@@ -164,7 +182,7 @@ namespace TimeTicker
             this.OkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.OkBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OkBtn.ForeColor = System.Drawing.Color.Aqua;
-            this.OkBtn.Location = new System.Drawing.Point(56, 173);
+            this.OkBtn.Location = new System.Drawing.Point(59, 173);
             this.OkBtn.Name = "OkBtn";
             this.OkBtn.Size = new System.Drawing.Size(75, 35);
             this.OkBtn.TabIndex = 5;
@@ -187,45 +205,30 @@ namespace TimeTicker
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Aqua;
-            this.label2.Location = new System.Drawing.Point(51, 22);
+            this.label2.Location = new System.Drawing.Point(50, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 29);
             this.label2.TabIndex = 3;
             this.label2.Text = "Opacity";
             // 
-            // panel3
+            // PanelTimer
             // 
-            this.panel3.Controls.Add(this.TimerOkBtn);
-            this.panel3.Controls.Add(this.DTBEnd);
-            this.panel3.Controls.Add(this.DTBStart);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(192, 244);
-            this.panel3.TabIndex = 4;
-            // 
-            // TimerOkBtn
-            // 
-            this.TimerOkBtn.BackColor = System.Drawing.Color.Black;
-            this.TimerOkBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.TimerOkBtn.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
-            this.TimerOkBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
-            this.TimerOkBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.TimerOkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TimerOkBtn.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimerOkBtn.ForeColor = System.Drawing.Color.Aqua;
-            this.TimerOkBtn.Location = new System.Drawing.Point(59, 188);
-            this.TimerOkBtn.Name = "TimerOkBtn";
-            this.TimerOkBtn.Size = new System.Drawing.Size(75, 35);
-            this.TimerOkBtn.TabIndex = 6;
-            this.TimerOkBtn.Text = "Ok";
-            this.TimerOkBtn.UseVisualStyleBackColor = false;
-            this.TimerOkBtn.Click += new System.EventHandler(this.TimerOkBtn_Click);
+            this.PanelTimer.Controls.Add(this.DTBEnd);
+            this.PanelTimer.Controls.Add(this.BtnSaveTime);
+            this.PanelTimer.Controls.Add(this.BtnTimerOk);
+            this.PanelTimer.Controls.Add(this.DTBStart);
+            this.PanelTimer.Controls.Add(this.label5);
+            this.PanelTimer.Controls.Add(this.label4);
+            this.PanelTimer.Controls.Add(this.label3);
+            this.PanelTimer.Location = new System.Drawing.Point(0, 0);
+            this.PanelTimer.Name = "PanelTimer";
+            this.PanelTimer.Size = new System.Drawing.Size(192, 244);
+            this.PanelTimer.TabIndex = 4;
             // 
             // DTBEnd
             // 
+            this.DTBEnd.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.DTBEnd.CalendarTitleForeColor = System.Drawing.Color.Black;
             this.DTBEnd.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.DTBEnd.Font = new System.Drawing.Font("Tahoma", 7.5F);
             this.DTBEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -233,10 +236,48 @@ namespace TimeTicker
             this.DTBEnd.Margin = new System.Windows.Forms.Padding(0);
             this.DTBEnd.Name = "DTBEnd";
             this.DTBEnd.Size = new System.Drawing.Size(151, 23);
-            this.DTBEnd.TabIndex = 4;
+            this.DTBEnd.TabIndex = 7;
+            // 
+            // BtnSaveTime
+            // 
+            this.BtnSaveTime.BackColor = System.Drawing.Color.Black;
+            this.BtnSaveTime.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveTime.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
+            this.BtnSaveTime.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.BtnSaveTime.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.BtnSaveTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSaveTime.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnSaveTime.ForeColor = System.Drawing.Color.Aqua;
+            this.BtnSaveTime.Location = new System.Drawing.Point(110, 188);
+            this.BtnSaveTime.Name = "BtnSaveTime";
+            this.BtnSaveTime.Size = new System.Drawing.Size(62, 35);
+            this.BtnSaveTime.TabIndex = 6;
+            this.BtnSaveTime.Text = "Save";
+            this.BtnSaveTime.UseVisualStyleBackColor = false;
+            this.BtnSaveTime.Click += new System.EventHandler(this.BtnSaveTime_Click);
+            // 
+            // BtnTimerOk
+            // 
+            this.BtnTimerOk.BackColor = System.Drawing.Color.Black;
+            this.BtnTimerOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnTimerOk.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
+            this.BtnTimerOk.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.BtnTimerOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.BtnTimerOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnTimerOk.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnTimerOk.ForeColor = System.Drawing.Color.Aqua;
+            this.BtnTimerOk.Location = new System.Drawing.Point(21, 188);
+            this.BtnTimerOk.Name = "BtnTimerOk";
+            this.BtnTimerOk.Size = new System.Drawing.Size(62, 35);
+            this.BtnTimerOk.TabIndex = 6;
+            this.BtnTimerOk.Text = "Ok";
+            this.BtnTimerOk.UseVisualStyleBackColor = false;
+            this.BtnTimerOk.Click += new System.EventHandler(this.TimerOkBtn_Click);
             // 
             // DTBStart
             // 
+            this.DTBStart.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
+            this.DTBStart.CalendarTitleForeColor = System.Drawing.Color.Black;
             this.DTBStart.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.DTBStart.Font = new System.Drawing.Font("Tahoma", 7.5F);
             this.DTBStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -279,6 +320,61 @@ namespace TimeTicker
             this.label3.TabIndex = 3;
             this.label3.Text = "Set Timer";
             // 
+            // PanelTicker
+            // 
+            this.PanelTicker.Controls.Add(this.comboBox1);
+            this.PanelTicker.Controls.Add(this.NumTick);
+            this.PanelTicker.Controls.Add(this.BtnOkTicker);
+            this.PanelTicker.Controls.Add(this.LabelTicker);
+            this.PanelTicker.Location = new System.Drawing.Point(0, 0);
+            this.PanelTicker.Name = "PanelTicker";
+            this.PanelTicker.Size = new System.Drawing.Size(192, 244);
+            this.PanelTicker.TabIndex = 4;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(41, 122);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(110, 24);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // NumTick
+            // 
+            this.NumTick.Location = new System.Drawing.Point(65, 76);
+            this.NumTick.Name = "NumTick";
+            this.NumTick.Size = new System.Drawing.Size(63, 24);
+            this.NumTick.TabIndex = 8;
+            // 
+            // BtnOkTicker
+            // 
+            this.BtnOkTicker.BackColor = System.Drawing.Color.Black;
+            this.BtnOkTicker.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnOkTicker.FlatAppearance.BorderColor = System.Drawing.Color.Aqua;
+            this.BtnOkTicker.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua;
+            this.BtnOkTicker.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.BtnOkTicker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOkTicker.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnOkTicker.ForeColor = System.Drawing.Color.Aqua;
+            this.BtnOkTicker.Location = new System.Drawing.Point(59, 173);
+            this.BtnOkTicker.Name = "BtnOkTicker";
+            this.BtnOkTicker.Size = new System.Drawing.Size(75, 35);
+            this.BtnOkTicker.TabIndex = 6;
+            this.BtnOkTicker.Text = "Ok";
+            this.BtnOkTicker.UseVisualStyleBackColor = false;
+            this.BtnOkTicker.Click += new System.EventHandler(this.BtnOkTicker_Click);
+            // 
+            // LabelTicker
+            // 
+            this.LabelTicker.AutoSize = true;
+            this.LabelTicker.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelTicker.ForeColor = System.Drawing.Color.Aqua;
+            this.LabelTicker.Location = new System.Drawing.Point(58, 22);
+            this.LabelTicker.Name = "LabelTicker";
+            this.LabelTicker.Size = new System.Drawing.Size(77, 29);
+            this.LabelTicker.TabIndex = 3;
+            this.LabelTicker.Text = "Ticker";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -286,9 +382,10 @@ namespace TimeTicker
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(192, 244);
             this.ContextMenuStrip = this.contextMenuStrip1;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.PanelHome);
+            this.Controls.Add(this.PanelOpacity);
+            this.Controls.Add(this.PanelTimer);
+            this.Controls.Add(this.PanelTicker);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -297,16 +394,18 @@ namespace TimeTicker
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Form1";
-            this.TransparencyKey = System.Drawing.Color.Transparent;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.PanelHome.ResumeLayout(false);
+            this.PanelHome.PerformLayout();
+            this.PanelOpacity.ResumeLayout(false);
+            this.PanelOpacity.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.PanelTimer.ResumeLayout(false);
+            this.PanelTimer.PerformLayout();
+            this.PanelTicker.ResumeLayout(false);
+            this.PanelTicker.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NumTick)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -314,8 +413,8 @@ namespace TimeTicker
         #endregion
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelHome;
+        private System.Windows.Forms.Panel PanelOpacity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private CircularProgressBar.CircularProgressBar circularProgressBar1;
@@ -323,13 +422,20 @@ namespace TimeTicker
         private System.Windows.Forms.ToolStripMenuItem opacityToolStripMenuItem;
         private System.Windows.Forms.Button OkBtn;
         private System.Windows.Forms.ToolStripMenuItem timerToolStripMenuItem;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel PanelTimer;
         private System.Windows.Forms.DateTimePicker DTBStart;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button TimerOkBtn;
+        private System.Windows.Forms.Button BtnTimerOk;
         private System.Windows.Forms.DateTimePicker DTBEnd;
+        private System.Windows.Forms.ToolStripMenuItem tickerToolStripMenuItem;
+        private System.Windows.Forms.Panel PanelTicker;
+        private System.Windows.Forms.Label LabelTicker;
+        private System.Windows.Forms.Button BtnOkTicker;
+        private System.Windows.Forms.Button BtnSaveTime;
+        private System.Windows.Forms.NumericUpDown NumTick;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
